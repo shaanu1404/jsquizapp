@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="./tailwind.min.css">
+    <link rel="stylesheet" href="./main.css">
+    <title>Quiz App</title>
+</head>
+
+<body class="bg-gray-800">
+    <header class="w-full bg-gray-700 py-3">
+        <h1 class="text-center text-2xl text-white">Javascript Quiz App</h1>
+    </header>
+
+    <main class="container mx-auto w-4/5 mt-5">
+
+        <div id="name-box" class="p-5 rounded-lg mx-auto w-1/2 bg-white">
+
+            <div>
+                <label for="name" class="text-sm">Enter your name</label>
+                <input type="text" id="name"
+                    class="border border-gray-600 rounded-lg w-full my-2 py-2 px-3 focus:bg-gray-200">
+            </div>
+            <button type="submit"
+                class="w-full py-2 text-center text-lg text-white bg-gray-700 rounded-lg hover:bg-gray-800">
+                Start Quiz
+                <i class="fas fa-arrow-right ml-5"></i>
+            </button>
+        </div>
+
+        <div id="score-board" class="w-1/2 px-5 pb-3 mt-5 rounded-lg mx-auto bg-white">
+            <div class="flex justify-between items-center">
+                <h1 class="text-lg py-3 capitalize">scoreboard</h1>
+                <button id="clear" class="text-sm uppercase py-1 px-2 bg-blue-500 text-white rounded">
+                    clear <i class="fas fa-trash ml-3"></i>
+                </button>
+            </div>
+            <hr class="pb-3">
+            <div class="list">
+                <!-- <div class="bg-white mb-1 p-2 px-5 rounded-lg mx-auto flex justify-between items-center hover:bg-gray-200">
+                    <h1 class="text-gray-900">Harish</h1>
+                    <span id="score"
+                    class="w-10 h-10 rounded-full bg-gray-800 text-white flex justify-center items-center">0</span>
+                </div> -->
+            </div>
+        </div>
+
+        <div id="spinner" class="mx-auto text-center">
+            <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <div id="details" class="bg-white mb-4 p-2 px-5 rounded-lg mx-auto w-4/5 flex justify-between items-center">
+            <h1 class="text-xl capitalize"></h1>
+            <span id="score"
+                class="w-12 h-12 rounded-full bg-gray-800 text-white flex justify-center items-center">0</span>
+        </div>
+
+        <div id="quiz" class="p-5 rounded-lg mx-auto w-4/5 bg-white">
+            <div>
+                <span id="difficulty" class="px-2 py-1 rounded text-white text-sm capitalize"></span>
+                <span id="category" class="mx-4 text-sm text-gray-600 capitalize"></span>
+            </div>
+            <div class="flex my-4 text-xl">
+                <span id="q-no" class="mr-2">Q1.</span>
+                <h1 id="question"></h1>
+            </div>
+            <div id="option-grid" class="grid grid-cols-2 gap-2">
+                <!-- <button class="bg-gray-700 text-white text-center w-full py-2 rounded-lg">
+                    option 1
+                </button> -->
+            </div>
+            <hr class="my-4">
+            <button id="next-question-button"
+                class="bg-blue-700 text-white text-center w-full py-2 rounded-lg hover:bg-blue-800">
+                Next Question<i class="fas fa-arrow-right ml-5"></i>
+            </button>
+        </div>
+
+    </main>
+
+    <div id="result-box" class="fixed inset-0">
+        <div id="backdrop" class="w-screen h-screen bg-black opacity-75 fixed inset-0 z-40"></div>
+        <div id="result" class="p-5 mt-16 rounded-lg mx-auto w-1/2 bg-white relative z-50">
+            <h1 class="text-center text-lg uppercase">you scored</h1>
+            <hr class="my-2">
+            <div class="flex flex-col justify-center items-center">
+                <div
+                    class="score w-20 h-20 rounded-full bg-green-300 text-4xl font-bold text-green-800 flex justify-center items-center my-3">
+                    0</div>
+                <h1 class="text-lg uppercase">out of 10</h1>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
