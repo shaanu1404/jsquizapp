@@ -198,7 +198,7 @@ const nameBoxButton = nameBox.children[1];
 
 nameBoxButton.addEventListener('click', (e) => {
     if (nameInput.value) {
-        player = new Player(nameInput.value);
+        player = new Player(nameInput.value.trim());
 
         nameInput.value = '';
         nameBox.style.display = 'none';
